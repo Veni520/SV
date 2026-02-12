@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mine❤️❤️❤️❤️.</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --primary: #ff0000;
+            --accent: #ff4d6d;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom, #000, #4a0000, #000);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container { padding: 40px 20px; }
+
+        .glass-box {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 1.8rem; color: #ff4d6d; text-shadow: 0 0 10px #ff0000; }
+
+        .btn {
+            padding: 12px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-yes { background: #ff0000; color: white; box-shadow: 0 0 15px #ff0000; }
+        .btn-no { background: #333; color: #999; }
+
+        .hidden { display: none; animation: fadeIn 1s; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Gift Cards Section */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: linear-gradient(45deg, #222, #000);
+            border: 1px solid #ff4d6d;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .special-msg { font-style: italic; color: #ffccd5; line-height: 1.6; }
+     /* Full Page Background */
+    #promise-page {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle, #4a0000, #000);
+        z-index: 1000; display: none; text-align: center; color: white;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .heart-container { display: flex; justify-content: center; gap: 15px; margin-top: 100px; }
+    
+    .single-heart { font-size: 45px; cursor: pointer; position: relative; transition: transform 0.2s; }
+    .single-heart:active { transform: scale(0.8); }
+    
+    .msg-bubble { 
+        display: none; position: absolute; top: -45px; left: 50%; transform: translateX(-50%);
+        background: #ff4d6d; color: white; padding: 5px 12px; border-radius: 15px; 
+        font-size: 14px; white-space: nowrap; box-shadow: 0 0 10px #ff4d6d;
+    }
+
+    /* Success Screen */
+    #full-screen-hearts {
+        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.95); z-index: 1001; flex-direction: column; align-items: center; justify-content: center;
+    }
+
+    /* Floating Animation */
+    .floating-heart {
+        position: absolute; color: #ff0055; font-size: 25px; 
+        animation: floatUp 4s infinite linear; opacity: 0.8; z-index: -1;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+        100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    .girl-shadow {
+        width: 180px; margin-top: 20px;
+        filter: drop-shadow(0 0 15px #ff0055) brightness(0); /* Black Shadow Effect */
+        cursor: pointer; animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    #letter-content {
+        display:none; background: #fff; color: #333; padding: 25px; 
+        margin: 20px; border-radius: 5px; border-left: 10px solid #ff0055;
+        box-shadow: 0 0 30px rgba(255, 77, 109, 0.5); font-style: italic;
+    }
+    
+   </style>
+
+   
+</head>
+<body>
+
+    <div class="container" id="main-question">
+        <div class="glass-box">
+            <h1>Will you be forever mine? ❤️</h1>
+            <p>Thank Universe for ungala enakku kuduthathukku.</p>
+            <button class="btn btn-yes" onclick="showYes()">YES</button>
+            <button class="btn btn-no" onclick="showNo()">NO</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="no-screen">
+        <div class="glass-box">
+            <h2 style="color: #ff4d6d;">Sorry Thangamee! ✋</h2>
+            <p>Indha jenmathukku ungalukku na mattum dhaan... Vera option-ae kedaiyaadhu.</p>
+            <p>Olunga mela irukkira "YES" ah press pannunga! 😉</p>
+            <button class="btn btn-yes" onclick="showYes()">YES</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="yes-screen">
+        <div class="glass-box">
+            <h2>Ennoda thangathuku... ✨</h2>
+            <p class="special-msg">
+             Happy Valentines Day Thangamee...This is our first Valentine Day..Thank you for enya ivvalo love pannuradhukku..
+            </p>
+        </div>
+
+        <h3>En Thangathukku ennala mudinja Gift-u 🎁</h3>
+        <div class="gift-grid">
+            </div>
+               <div class="card">
+                <h4>Gift 1 🎵</h4>
+                <p>For Us</p>
+                <button class="btn btn-yes" onclick="window.open('https://music.youtube.com/playlist?list=PLzmfXimH8zfBwIQQMkPWL42qPoiK6yz1i', '_blank')">Listen Now</button>
+            </div>
+
+           <div class="card">
+                <h4>Gift 2 💌</h4>
+                <p>Personal Surprise</p>
+                <button class="btn btn-yes" onclick="window.open('https://wa.me/94760156553?text=Happy%20Valentine%20Day%20Pondatti!%20En%20Gift%202%20Photo%20ah%20ippo%20anuppu!%20❤️', '_blank')">Open Surprise</button>
+            
+
+           <div class="card">
+    <h4>Gift 3 🛡️</h4>
+    <button class="btn btn-yes" onclick="openPromisePage()">Open My Heart</button>
+</div>
+
+<div id="promise-page">
+    <h2 style="margin-top: 50px; color: #ff4d6d;">Thangam, letter vasikkanum na enakku oru kiss venum so olunga kandu pudinga keela ulla heart la irukku! 💋</h2>
+    
+    <div class="heart-container">
+        <div class="single-heart" onclick="showFace(1)">❤️<div id="h1" class="msg-bubble">😊  Sorry Dear</div></div>
+        <div class="single-heart" onclick="showFace(2)">❤️<div id="h2" class="msg-bubble">😔  Idhulaum illa</div></div>
+        <div class="single-heart" onclick="showFace(3)">❤️<div id="h3" class="msg-bubble">😠  Olunga paaru</div></div>
+        <div class="single-heart" onclick="showFace(4)">❤️<div id="h4" class="msg-bubble">🚫 Onnumae illa!</div></div>
+        <div class="single-heart" onclick="startSuccess()">❤️<div id="h5" class="msg-bubble">💋 KISS!</div></div>
+    </div>
+</div>
+
+<div id="full-screen-hearts">
+    <h1 style="color: #ff4d6d; text-align: center; font-size: 2rem;">LOVE YOU THANGAMEEE......... ❤️</h1>
+    
+    <div id="girl-section" style="text-align: center;" onclick="showFinalLetter()">
+        <img src="https://img.icons8.com/ios-filled/200/ffffff/reading-confirmation.png" class="girl-shadow">
+        <p style="color: white; margin-top: 15px;">Thangam, idha press panni ullae ponga! 💌</p>
+    </div>
+
+    <div id="letter-content">
+        <h3 style="color: #ff0055;">My Dear Purusaa... 💍</h3>
+       <p>Hi Pappu..
+                One month complete achi nama pesa start panni🎉🎉🎉🎉.Enna solradhu na yaraum love pannanu nu nenachadhu kooda illa ena ennoda life vera love panna veetula oththukka matanga en summa risk nu solli love panna virupam illa,na enga veetula nalla sellama irundhan ana oru kuripitta period la romaba kastam anubavichitan.enakku unga kitta neraya pesanum neraya sollanum nu asa unmaya sollanu na enakku unga thol la sanji ennoda vali ellam pora varaikkum alanum...🥰🥰🥰Romba cringe ah irukkum but idhu than unmai na oruthavanga munnad aludhena adhu nenga mattu than,ennoda sandhosam sogam achievements ellathulaum nenga irukkanum,ella nengale senja na onnu seiya matenanu yosikka venam...
+          ungaloda ella dreams um true aga na ungaloda periya support ah irupan..na ungala nalla pathuppan..nammaloda kalyanathukku apparam nenga yaru solradhum kekka venam ungalukku enna virupamo adha nama seivomm business start pannuvom..namma rendu peroda familium rendu pperum pathuppom..and nenga sonna madhiriye onna thoongalam,samaikkalam,sappitalam aparam....................🫣🫣🫣🫣 neraya travel pannuvom 🧳 apparam nakkana oru kudumbam..ana konjam wait pannunga na ennoda responsibilities ah quick ah mudikka try pannuran.
+         And please...nambunga yaru eppadiyo na ungala vittu poga matan..nenga en life la na romba kastathula breaking point la irukkum podhu vandhinga innaikku na marubad palaya madhiri dhairiyama irukkena ungala la than...ennoda appa anna thambikku apparam na nambura ore boy nenga mattu than and idhellam sollanu nu thonuchi sollitan.edhu thappa irundha sorry.
+     enga appa na kastathula irukkum podhu enakku aarudhala ungala anuppi irukkaru nu than na start la irundhu namburan,ena idhula sonna enakku type panna mudiyala innoru naal solran.na ungala vittu poga matan ❤️❤️❤️❤️❤️
+         Nambunga nambikka thane valkka❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️Love you da Thangame💍💍💍💍💍💍💍💍</p>
+    </div>
+</div>
+    <div id="final-letter" class="hidden" style="background: white; color: black; margin: 30px; padding: 20px; border-radius: 5px; box-shadow: 0 0 20px gold;">
+               
+    </div>
+</div>
+</div>
+
+        </div>
+    </div>
+
+    <script>
+        function showYes() {
+            document.getElementById('main-question').classList.add('hidden');
+            document.getElementById('no-screen').classList.add('hidden');
+            document.getElementById('yes-screen').classList.remove('hidden');
+        }
+
+        function showNo() {
+            document.getElementById('main-question').classList.add('hidden');
+            document.getElementById('no-screen').classList.remove('hidden');
+        }
+function openPromisePage() { 
+        document.getElementById('promise-page').style.display = 'block'; 
+    }
+
+    function showFace(id) {
+        // Hide all bubbles first
+        document.querySelectorAll('.msg-bubble').forEach(b => b.style.display = 'none');
+        // Show specific bubble
+        document.getElementById('h' + id).style.display = 'block';
+    }
+
+    function startSuccess() {
+        document.getElementById('full-screen-hearts').style.display = 'flex';
+        // Generate floating hearts
+        for (let i = 0; i < 40; i++) {
+            let heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = Math.random() * 100 + 'vh';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('full-screen-hearts').appendChild(heart);
+        }
+    }
+
+    function showFinalLetter() {
+        document.getElementById('girl-section').style.display = 'none';
+        document.getElementById('letter-content').style.display = 'block';
+    }</script>
+
+
+</body>
+</html>
