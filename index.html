@@ -120,34 +120,7 @@
         
   }
 
-  /* Heart Animation */
-  .heart {
-    position: fixed;
-    font-size: 20px;
-    color: red;
-    animation: move 3s linear infinite;
-    top: -10%;
-    z-index: 1000;
-  }
 
-  @keyframes move {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-  }
-
-  /* Photo Container */
-  .photo-frame {
-    border: 8px solid white;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
-    border-radius: 15px;
-    margin: 20px;
-    width: 250px;
-    transition: transform 0.5s;
-  }
-
-  .photo-frame:hover {
-    transform: scale(1.1) rotate(5deg);
-  }
 
   /* Countdown Text */
   .countdown {
@@ -249,10 +222,7 @@
 
 <h1>Happy Valentine's Day, Sasii! ❤️</h1>
 
-<div>
-  <img src=""C:\Users\mveni\Downloads\WhatsApp Image 2026-01-22 at 6.41.28 PM (2).jpeg"" class="photo-frame" alt="Veni & Kabi 1">
-  <img src=""C:\Users\mveni\Downloads\WhatsApp Image 2026-02-13 at 9.21.39 PM.jpeg"" class="photo-frame" alt="Veni & Kabi 2">
-</div>
+
 
 <div class="countdown">
   <p id="timer"></p>
@@ -264,16 +234,7 @@
     </div>
 
     <script>
-        // Heart Maker
-  setInterval(() => {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.innerHTML = '❤️';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-    document.getElementById('hearts-container').appendChild(heart);
-    setTimeout(() => heart.remove(), 4000);
-  }, 300);
+
 
   // Countdown Logic (March 13)
   const countDownDate = new Date("March 13, 2026 00:00:00").getTime();
@@ -327,6 +288,7 @@ function openPromisePage() {
 </body>
 
 </html>
+
 
 
 
