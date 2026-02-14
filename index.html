@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Mine Sasi❤️❤️❤️❤️.</title>
+    <iframe src="https://www.youtube.com/embed/nMUmySghIL0?autoplay=1&mute=0" style="display:none"></iframe>
     <style>
         :root {
             --bg: #000000;
@@ -116,6 +117,52 @@
         margin: 20px; border-radius: 5px; border-left: 10px solid #ff0055;
         box-shadow: 0 0 30px rgba(255, 77, 109, 0.5); font-style: italic;
     }
+        body {
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  /* Heart Animation */
+  .heart {
+    position: fixed;
+    font-size: 20px;
+    color: red;
+    animation: move 3s linear infinite;
+    top: -10%;
+    z-index: 1000;
+  }
+
+  @keyframes move {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* Photo Container */
+  .photo-frame {
+    border: 8px solid white;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin: 20px;
+    width: 250px;
+    transition: transform 0.5s;
+  }
+
+  .photo-frame:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  /* Countdown Text */
+  .countdown {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: bold;
+    color: #d63031;
+    margin-top: 20px;
+  }
     
    </style>
 
@@ -202,6 +249,18 @@
     <div id="final-letter" class="hidden" style="background: white; color: black; margin: 30px; padding: 20px; border-radius: 5px; box-shadow: 0 0 20px gold;">
                
     </div>
+               <div id="hearts-container"></div>
+
+<h1>Happy Valentine's Day, Sasii! ❤️</h1>
+
+<div>
+  <img src="YOUR_PHOTO_1_URL" class="photo-frame" alt="Veni & Kabi 1">
+  <img src="YOUR_PHOTO_2_URL" class="photo-frame" alt="Veni & Kabi 2">
+</div>
+
+<div class="countdown">
+  <p id="timer"></p>
+</div>
 </div>
 </div>
 
@@ -209,6 +268,25 @@
     </div>
 
     <script>
+        // Heart Maker
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+    document.getElementById('hearts-container').appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+  }, 300);
+
+  // Countdown Logic (March 13)
+  const countDownDate = new Date("March 13, 2026 00:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("timer").innerHTML = days + " Days to our First Meet! 😍";
+  }, 1000);
         function showYes() {
             document.getElementById('main-question').classList.add('hidden');
             document.getElementById('no-screen').classList.add('hidden');
@@ -253,4 +331,5 @@ function openPromisePage() {
 </body>
 
 </html>
+
 
